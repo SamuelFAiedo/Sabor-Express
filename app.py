@@ -5,6 +5,10 @@ restaurantes = ['pizza', 'sushi']
 def exibir_titulo():
     print('Sabor Express\n')
 
+def voltar():
+    input('\nDigite uma tecla caso deseje voltar para o menu principal: ')
+    main()
+
 def exibir_opcoes():
     print('1. Cadastrar Restautante: ')
     print('2. Listar Restautante: ')
@@ -17,17 +21,14 @@ def cadastrar_restaurantes():
     nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     restaurantes.append(nome_restaurante)
     print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!\n')
-    input('Digite uma tecla caso deseje voltar para o menu principal: ')
-    main()
+    voltar()
 
 def mostrar_restaurantes():
     os.system('cls')
     print('Lista de restaurantes cadastrados:\n') 
     for item in restaurantes:
         print(f'. {item}')
-
-    input('Digite uma tecla caso deseje voltar para o menu principal: ')
-    main()
+    voltar()
 
 def encerrar_app():
     os.system('cls')

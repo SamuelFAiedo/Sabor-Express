@@ -27,6 +27,15 @@ def exibir_opcoes():
     print('4. Sair\n')
 
 def cadastrar_restaurantes():
+    '''Cadastra novos restaurantes e os adiciona na biblioteca.
+    
+    input:
+    - Nome do restaurante
+    - categoria
+
+    output:
+    - Adiciona os dados do restaurante novo a biblioteca
+    '''
     exibir_subtitulo('Cadastro de novos restaurantes:\n')
     nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     categoria = input(f'Digite a categoria do restaurante {nome_restaurante}: ')
@@ -57,6 +66,14 @@ def opcao_invalida():
     main()
 
 def trocar_estado_restaurante():
+    '''Altera o estado dos restaurantes (True/False)
+    
+    input:
+    - Nome do restaurante
+
+    output:
+    - Altera o valor do restaurante de True pra False ou vice-versa e informa ao usuário que foi trocado
+    '''
     exibir_subtitulo('Alterando o estado do restaurante:')
     nome_restaurante = input('Digite o nome do restaurante que deseja ativar ou desativar: ')
     restaurante_encontrado = False
@@ -71,7 +88,7 @@ def trocar_estado_restaurante():
     voltar()
 
 def escolher_opcoes():
-
+    '''Controle de escolha de opções do programa'''
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
         if opcao_escolhida == 1:

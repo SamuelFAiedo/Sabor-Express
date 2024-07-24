@@ -21,9 +21,9 @@ def voltar():
     main()
 
 def exibir_opcoes():
-    print('1. Cadastrar Restautante: ')
-    print('2. Listar Restautante: ')
-    print('3. Ativar Restautante: ')
+    print('1. Cadastrar Restaurante: ')
+    print('2. Listar Restaurante: ')
+    print('3. Ativar Restaurante: ')
     print('4. Sair\n')
 
 def cadastrar_restaurantes():
@@ -47,7 +47,7 @@ def cadastrar_restaurantes():
 def mostrar_restaurantes():
     exibir_subtitulo('Lista de restaurantes:')
 
-    print('Nome do restaurante:'.ljust(17), 'Categorias:'.ljust(17), 'Status:')
+    print('Nome do restaurante:'.ljust(17), 'Categorias:'.ljust(19), 'Status:')
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
         categoria = restaurante['categoria']

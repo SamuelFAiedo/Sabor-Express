@@ -10,7 +10,10 @@ def exibir_titulo():
 
 def exibir_subtitulo(texto):
     os.system('cls')
+    linha = '-' * (len(texto))
+    print(linha)
     print(texto)
+    print(linha)
     print(' ')
 
 def voltar():
@@ -29,20 +32,30 @@ def cadastrar_restaurantes():
     categoria = input(f'Digite a categoria do restaurante {nome_restaurante}: ')
     dados_restaurante = {'nome':nome_restaurante, 'categoria':categoria, 'ativo':False}
     restaurantes.append(dados_restaurante)
-    print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!\n')
+    print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!')
     voltar()
 
 def mostrar_restaurantes():
     exibir_subtitulo('Lista de restaurantes:')
-    for item in restaurantes:
-        nome_restarante = item['nome']
-        categoria = item['categoria']
-        ativo = item['ativo']
-        print(f'- {nome_restarante} | {categoria} | {ativo}.')
+    for restaurante in restaurantes:
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = 'ativado' if restaurante['ativo'] else 'desativado'
+        print(f'- {nome_restaurante} | {categoria} | {ativo}.')
     voltar()
 
+
+
+def encerrar_app():
+    exibir_subtitulo('Programa encerrado.')
+
+def opcao_invalida():
+    print('Opção inválida!\n')
+    input('Digite uma tecla para voltar ao começo:')
+    main()
+
 def trocar_estado_restaurante():
-    exibir_subtitulo()
+    exibir_subtitulo('Alterando o estado do restaurante:')
     nome_restaurante = input('Digite o nome do restaurante que deseja ativar ou desativar: ')
     restaurante_encontrado = False
     for restaurante in restaurantes:
@@ -53,16 +66,7 @@ def trocar_estado_restaurante():
             print(mensagem)
     if not restaurante_encontrado:
         print('Restaurante não encontrado.')
-
     voltar()
-
-def encerrar_app():
-    exibir_subtitulo('Programa encerrado.')
-
-def opcao_invalida():
-    print('Opção inválida!\n')
-    input('Digite uma tecla para voltar ao começo:')
-    main()
 
 def escolher_opcoes():
 

@@ -11,7 +11,7 @@ def exibir_titulo():
 def exibir_subtitulo(texto):
     os.system('cls')
     linha = '-' * (len(texto))
-    print(linha)
+    print(linha) 
     print(texto)
     print(linha)
     print(' ')
